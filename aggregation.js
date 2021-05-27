@@ -112,6 +112,20 @@ db.menu.aggregate([
 // { averagePrice : 3, type : "Other" }
 // { averagePrice : 2.75, type : "Tea" }
 // { averagePrice : 2.25, type : "Coffee" }
+
+   db.menu.aggregate([
+    {$group: {
+      _id: "$type", 
+      averagePrice: {$avg: "$price"}
+    }},
+    {$project: {
+      type: "$_id",
+      averagePrice: true,
+      _id: false
+    }},
+    {$sort: {averagePrice: -1}}
+  ]);
+  
 // Get the two most expensive drinks. ($sort, $limit)
 // { _id: ..., name : "Mocha Latte", price : 3.5, type : "Espresso" }
 // { _id: ..., name : "Chai", price : 3.5, type : "Tea" }

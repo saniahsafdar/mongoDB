@@ -17,6 +17,9 @@ db.menu.aggregate([
 
 
 // List only the first 3 drinks, sorted alphabetically by name. ($sort, $limit)
+   db.menu.aggregate([
+       {$sort: { name: 1 }} , {$limit: 3 }
+   ])
 // List the next 3 drinks (4-6), sorted alphabetically by name. ($sort, $skip, $limit)
 // List all drinks alphabetically by name. Only show the name of each. ($sort, $project)
 // Get all drinks over 3 dollars. ($match)

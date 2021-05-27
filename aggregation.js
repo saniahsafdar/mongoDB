@@ -73,6 +73,14 @@ db.menu.aggregate([
 
 // Get the average price of all drinks.
 // { _id: null, price: 2.6944444444444446 }
+
+   db.menu.aggregate([
+       {$group:{
+           _id: null,
+           averagePrice: {$avg: "$price"}
+       }}
+   ])
+
 // Get the average price for each type of drink. Name it averagePrice.
 // { _id : "Tea", averagePrice : 2.75 }
 // { _id : "Other", averagePrice : 3 }

@@ -37,7 +37,12 @@ db.people.aggregate([
 
 db.people.aggregate([
     { $sort: {age: -1} },
-    { $limit: 3 }
+    { $limit: 3 },
+    {$project: {
+        type: "$_id",
+        age: true,
+        _id: false
+      }},
   ])
 
 // 5 youngest people, display only their names as one value (first + " " + last) and their ages

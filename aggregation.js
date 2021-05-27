@@ -47,6 +47,12 @@ db.menu.aggregate([
 // { _id: ..., name: "Espresso", price: 2.5, type: "Espresso" }
 // { _id: ..., name: "Latte", price: 3, type: "Espresso" }
 // { _id: ..., name: "Mocha Latte", price: 3.5, type: "Espresso" }
+
+db.menu.aggregate([
+    {$match: {type: "Espresso"}}
+])
+
+
 // Get only the espresso type drinks. Sort them by price, highest first.
 // { _id: ..., name : "Mocha Latte", price : 3.5, type : "Espresso" }
 // { _id: ..., name : "Latte", price : 3, type : "Espresso" }

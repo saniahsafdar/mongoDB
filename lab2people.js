@@ -10,6 +10,13 @@ db.people.aggregate([
 
 // Average age by gender
 // Expected Result: Female: 42.04, Male: 40.60
+
+db.people.aggregate([
+    {$group:{
+        _id: "$gender" ,
+        averageAge: {$avg: "$age" }
+    }}
+])
 // Number of people by gender
 // Expected Result: Female: 113, Male: 87
 // 3 oldest people

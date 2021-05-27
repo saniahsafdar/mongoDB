@@ -28,6 +28,18 @@ db.people.aggregate([
 ])
 // 3 oldest people
 // Expected Result: Phyllis Gray 81, Melissa Banks 79, Walter Bishop 76
+
+db.people.aggregate([
+    {$group: {
+        _id: null, oldestAge: {$max: "$age"}
+    }}
+])
+
+db.people.aggregate([
+    { $sort: {age: -1} },
+    { $limit: 3 }
+  ])
+
 // 5 youngest people, display only their names as one value (first + " " + last) and their ages
 // Expected Result: Nicholas Hunter 17, Kenneth Burns 18, Kathy Hayes 19, Edward Hayes 21, Steve Vasquez 21)
 // Average number of children

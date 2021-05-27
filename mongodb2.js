@@ -2,7 +2,7 @@
 db.people.insertOne({ first_name: "Mary", last_name: "Smith", email: "maryu@gmail.edu", gender:"Female", age: 17, state: "Ohio", "children": [] })
 
 // Add another person. They should have at least two children.
-
+db.people.insertOne({ first_name: "Suni", last_name: "Shia", email: "fake@rocketmail.com", gender:"Female", age: 34, state: "Washington", "children": [{name: "Dahlia", age: 4}, {name: "Sufiyan", age: 7}] })
 // Update one person named Clarence. He moved from North Dakota to South Dakota.
 
 // Update Rebecca Hayes. Remove her email address.

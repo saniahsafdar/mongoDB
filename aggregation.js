@@ -129,3 +129,9 @@ db.menu.aggregate([
 // Get the two most expensive drinks. ($sort, $limit)
 // { _id: ..., name : "Mocha Latte", price : 3.5, type : "Espresso" }
 // { _id: ..., name : "Chai", price : 3.5, type : "Tea" }
+
+db.menu.aggregate([
+    { $sort: {price: -1} },
+    { $limit: 2 }
+])
+

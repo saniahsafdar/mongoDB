@@ -29,7 +29,7 @@ db.people.deleteMany({email: null})
 
 // In submissions collection
 // Add several documents to a new submissions collection. Do it all in one command. (Remember, MongoDB will create the collection for you. Just start adding documents.)
-db.submission.insertMany([
+db.submissions.insertMany([
 title: "The River Bend", upvotes: 10, downvotes: 2, artist: <ID of Anna Howard>
 title: "Nine Lives", upvotes: 7, downvotes: 0, artist: <ID of Scott Henderson>
 title: "Star Bright", upvotes: 19, downvotes: 3, artist: <ID of Andrea Burke>
@@ -39,7 +39,10 @@ title: "Non Sequitur", upvotes: 11, downvotes: 1, artist: <ID of Gerald Bailey><
 
 
 // Add 2 upvotes for "The River Bend".
+db.submissions.updateOne({title: "The River Bend"} , {$inc: {upvotes: 2}})
+
 // Add a field round2 = true to all submissions with at least 10 upvotes. (expect 3 matches)
+//NOT SURE WHAT TO DO HERE
 
 // Extended Challenges:
 // Update Helen Clark. She had a baby! Add a child, name: Melanie, age: 0.

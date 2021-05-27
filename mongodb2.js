@@ -11,9 +11,15 @@ db.people.updateOne({first_name: "Rebecca", last_name: "Hayes"},
 { $unset:{email: 1}})
 
 // Update everyone from Missouri. They all had a birthday today, so add one to their age. (expect 4 matches)
+db.people.updateMany({state: "Missouri"},
+{ $inc:{age:1}})
+
 
 // Jerry Baker has updated information. Replace with a new document:
 // { first_name: "Jerry", last_name: "Baker-Mendez", email: "jerry@classic.ly", gender:"Male", age: 28, state: "Vermont", "children": [{name: "Alan", age: 18}, {name: "Jenny", age: 3}] }
+db.people.replaceMany({first_name: "Jerry" , last_name: "Baker-Mendez"},
+{ first_name: "Jerry", last_name: "Baker-Mendez", email: "jerry@classic.ly", gender:"Male", age: 28, state: "Vermont", "children": [{name: "Alan", age: 18}, {name: "Jenny", age: 3}] })
+
 // Delete Wanda Bowman.
 // Delete everyone who does not have an email address specified. (expect 37 matches)
 

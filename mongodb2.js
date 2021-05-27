@@ -29,11 +29,15 @@ db.people.deleteMany({email: null})
 
 // In submissions collection
 // Add several documents to a new submissions collection. Do it all in one command. (Remember, MongoDB will create the collection for you. Just start adding documents.)
-// title: "The River Bend", upvotes: 10, downvotes: 2, artist: <ID of Anna Howard>
-// title: "Nine Lives", upvotes: 7, downvotes: 0, artist: <ID of Scott Henderson>
-// title: "Star Bright", upvotes: 19, downvotes: 3, artist: <ID of Andrea Burke>
-// title: "Why Like This?", upvotes: 1, downvotes: 5, artist: <ID of Steven Marshall>
-// title: "Non Sequitur", upvotes: 11, downvotes: 1, artist: <ID of Gerald Bailey>
+db.submission.insertMany([
+title: "The River Bend", upvotes: 10, downvotes: 2, artist: <ID of Anna Howard>
+title: "Nine Lives", upvotes: 7, downvotes: 0, artist: <ID of Scott Henderson>
+title: "Star Bright", upvotes: 19, downvotes: 3, artist: <ID of Andrea Burke>
+title: "Why Like This?", upvotes: 1, downvotes: 5, artist: <ID of Steven Marshall>
+title: "Non Sequitur", upvotes: 11, downvotes: 1, artist: <ID of Gerald Bailey></ID>
+])
+
+
 // Add 2 upvotes for "The River Bend".
 // Add a field round2 = true to all submissions with at least 10 upvotes. (expect 3 matches)
 

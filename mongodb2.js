@@ -43,7 +43,7 @@ db.submissions.insertMany([
 db.submissions.updateOne({title: "The River Bend"} , {$inc: {upvotes: 2}})
 
 // Add a field round2 = true to all submissions with at least 10 upvotes. (expect 3 matches)
-//NOT SURE WHAT TO DO HERE
+db.submissions.updateOne({ upvotes: { $gte:10}}, { $set: {round2: true}})
 
 // Extended Challenges:
 // Update Helen Clark. She had a baby! Add a child, name: Melanie, age: 0.

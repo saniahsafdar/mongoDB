@@ -7,7 +7,7 @@ db.people.insertOne({ first_name: "Suni", last_name: "Shia", email: "fake@rocket
 db.people.updateOne({first_name: "Clarence"},
 { $set:{state: "South Dakota"}})
 // Update Rebecca Hayes. Remove her email address.
-db.people.updateOne({first_name: "Rebecca"}, {last_name: "Hayes"},
+db.people.updateOne({first_name: "Rebecca", last_name: "Hayes"},
 { $unset:{email: 1}})
 
 // Update everyone from Missouri. They all had a birthday today, so add one to their age. (expect 4 matches)

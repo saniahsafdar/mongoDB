@@ -21,7 +21,11 @@ db.people.replaceOne({first_name: "Jerry" , last_name: "Baker"},
 { first_name: "Jerry", last_name: "Baker-Mendez", email: "jerry@classic.ly", gender:"Male", age: 28, state: "Vermont", "children": [{name: "Alan", age: 18}, {name: "Jenny", age: 3}] })
 
 // Delete Wanda Bowman.
+
+db.people.deleteOne({first_name: "Wanda" , last_name: "Bowman"})
+
 // Delete everyone who does not have an email address specified. (expect 37 matches)
+db.people.deleteMany({email: null})
 
 // In submissions collection
 // Add several documents to a new submissions collection. Do it all in one command. (Remember, MongoDB will create the collection for you. Just start adding documents.)

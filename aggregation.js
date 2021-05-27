@@ -37,6 +37,12 @@ db.menu.aggregate([
 // Get all drinks over 3 dollars. ($match)
 // { _id: ..., name: "Mocha Latte", price: 3.5, type: "Espresso" }
 // { _id: ..., name: "Chai", price: 3.5, type: "Tea" }
+
+   db.menu.aggregate([
+       {$match: { price: {$gt: 3}}}
+   ])
+   
+
 // Get all espresso drinks.
 // { _id: ..., name: "Espresso", price: 2.5, type: "Espresso" }
 // { _id: ..., name: "Latte", price: 3, type: "Espresso" }

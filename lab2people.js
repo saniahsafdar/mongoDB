@@ -19,6 +19,13 @@ db.people.aggregate([
 ])
 // Number of people by gender
 // Expected Result: Female: 113, Male: 87
+
+db.people.aggregate([
+    {$group:{
+        _id: "$gender",
+        count: {$sum:1}
+    }}
+])
 // 3 oldest people
 // Expected Result: Phyllis Gray 81, Melissa Banks 79, Walter Bishop 76
 // 5 youngest people, display only their names as one value (first + " " + last) and their ages

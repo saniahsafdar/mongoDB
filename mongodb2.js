@@ -4,7 +4,7 @@ db.people.insertOne({ first_name: "Mary", last_name: "Smith", email: "maryu@gmai
 // Add another person. They should have at least two children.
 db.people.insertOne({ first_name: "Suni", last_name: "Shia", email: "fake@rocketmail.com", gender:"Female", age: 34, state: "Washington", "children": [{name: "Dahlia", age: 4}, {name: "Sufiyan", age: 7}] })
 // Update one person named Clarence. He moved from North Dakota to South Dakota.
-
+db.people.updateOne({ $set: {state: "South Dakota"} })
 // Update Rebecca Hayes. Remove her email address.
 
 // Update everyone from Missouri. They all had a birthday today, so add one to their age. (expect 4 matches)

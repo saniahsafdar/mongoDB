@@ -17,7 +17,7 @@ db.people.updateMany({state: "Missouri"},
 
 // Jerry Baker has updated information. Replace with a new document:
 // { first_name: "Jerry", last_name: "Baker-Mendez", email: "jerry@classic.ly", gender:"Male", age: 28, state: "Vermont", "children": [{name: "Alan", age: 18}, {name: "Jenny", age: 3}] }
-db.people.replaceMany({first_name: "Jerry" , last_name: "Baker-Mendez"},
+db.people.replaceOne({first_name: "Jerry" , last_name: "Baker-Mendez"},
 { first_name: "Jerry", last_name: "Baker-Mendez", email: "jerry@classic.ly", gender:"Male", age: 28, state: "Vermont", "children": [{name: "Alan", age: 18}, {name: "Jenny", age: 3}] })
 
 // Delete Wanda Bowman.

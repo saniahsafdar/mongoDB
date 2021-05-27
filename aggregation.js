@@ -64,6 +64,13 @@ db.menu.aggregate([
 
 // Get the lowest price of any drink. (Just the price.) ($group)
 // { _id: null, price : 2.0 }
+
+db.menu.aggregate([
+    {$group: {
+        _id: null, price: {$min: "$price"}
+    }}
+])
+
 // Get the average price of all drinks.
 // { _id: null, price: 2.6944444444444446 }
 // Get the average price for each type of drink. Name it averagePrice.

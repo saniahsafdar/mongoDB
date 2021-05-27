@@ -27,6 +27,13 @@ db.menu.aggregate([
    ])
 
 // List all drinks alphabetically by name. Only show the name of each. ($sort, $project)
+
+   db.menu.aggregate([
+       {$sort: {name:1}},
+       {$project:{name:true}}
+   ])
+
+
 // Get all drinks over 3 dollars. ($match)
 // { _id: ..., name: "Mocha Latte", price: 3.5, type: "Espresso" }
 // { _id: ..., name: "Chai", price: 3.5, type: "Tea" }

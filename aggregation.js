@@ -57,6 +57,11 @@ db.menu.aggregate([
 // { _id: ..., name : "Mocha Latte", price : 3.5, type : "Espresso" }
 // { _id: ..., name : "Latte", price : 3, type : "Espresso" }
 // { _id: ..., name : "Espresso", price : 2.5, type : "Espresso" }
+
+db.menu.aggregate([
+    {$match: {type: "Espresso"}} , {$sort: {price: 1 }}
+])
+
 // Get the lowest price of any drink. (Just the price.) ($group)
 // { _id: null, price : 2.0 }
 // Get the average price of all drinks.

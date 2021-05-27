@@ -99,6 +99,14 @@ db.menu.aggregate([
 // { _id : "Espresso", topPrice : 3.5 }
 // { _id : "Tea", topPrice : 3.5 }
 // { _id : "Other", topPrice : 3 }
+
+   db.menu.aggregate([
+    {$group:{
+        _id: "$type",
+        topPrice: {$max: "$price"}
+    }}
+])
+
 // Get the average price for each type of drink. The results should have field names “type” and “averagePrice”. ($project) Sort the results with the most expensive first.
 // { averagePrice : 3, type : "Espresso" }
 // { averagePrice : 3, type : "Other" }
